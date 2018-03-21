@@ -46,14 +46,20 @@ module.exports = {
             },
             {
                 test: /\.styl?$/,
-                use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: [
-                        'css-loader',
-                        postCSSLoader,
-                        'stylus-loader',
-                    ],
-                }),
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    postCSSLoader,
+                    'stylus-loader',
+                ],
+                // use: ExtractTextPlugin.extract({
+                //     fallback: 'style-loader',
+                //     use: [
+                //         'css-loader',
+                //         postCSSLoader,
+                //         'stylus-loader',
+                //     ],
+                // }),
             },
         ],
     },
