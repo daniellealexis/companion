@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import SearchInputG from 'grommet/components/SearchInput';
+
+import './styles.styl';
 
 export default class SearchInput extends Component {
     static propTypes = {
@@ -13,11 +16,10 @@ export default class SearchInput extends Component {
 
     render() {
         const baseClassName = this.constructor.name;
+        const { placeholder } = this.props;
 
         return (
-            <div className={baseClassName}>
-                <input placeholder={this.props.placeholder} />
-            </div>
+            <SearchInputG className={baseClassName} placeHolder={placeholder} />
         );
     }
 }

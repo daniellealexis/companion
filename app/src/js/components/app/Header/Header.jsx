@@ -25,7 +25,7 @@ export default class Header extends Component {
         const baseClassName = this.constructor.name;
 
         return (
-            <header>
+            <header className={baseClassName} >
                 <h1>Companion</h1>
                 <div>
                     <SearchInput onSearch={this.props.onSearch} />
