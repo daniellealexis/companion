@@ -1,7 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
-import TestApp from '@components/TestApp';
+import HomePage from 'components/pages/Home';
 
-require('@styles/main.styl');
+require('../../styles/main.styl');
 
-render(<TestApp />, document.getElementById('root'));
+render(<HomePage />, document.getElementById('root'));
+
+if (module.hot) {
+    module.hot.accept();
+    const NewHome = require('components/pages/Home').default;
+    render(<NewHome />, document.getElementById('root'));
+}
