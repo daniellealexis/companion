@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import './styles.styl';
+
 export const SMALL_SIZE = 'small';
 export const MEDIUM_SIZE = 'medium';
 export const LARGE_SIZE = 'large';
@@ -39,18 +41,30 @@ export default class UserAvatar extends Component {
         }
     };
 
+    buildClassNames(props) {
+        const baseClassName = this.constructor.name;
+
+        return [
+            baseClassName,
+            props.size && `${baseClassName}--${props.size}`,
+        ].filter(Boolean).join(' ');
+    }
+
     render() {
         const baseClassName = this.constructor.name;
         const {
-            imageUrl: backgroundImage,
+            imageUrl,
             name,
             title,
         } = this.props;
         const NameTag = this.getNameTag();
 
         return (
-            <div onClick={this.handleAvatarClick} className={baseClassName}>
-                <div className={`${baseClassName}__image`} style={{ backgroundImage }} />
+            <div onClick={this.handleAvatarClick} className={this.buildClassNames(this.props)}>
+                <div
+                    className={`${baseClassName}__image`}
+                    style={{ backgroundImage: `url(${imageUrl})` }}
+                />
                 { !this.props.showImageOnly && name &&
                     <NameTag className={`${baseClassName}__name`}>{name}</NameTag>
                 }
