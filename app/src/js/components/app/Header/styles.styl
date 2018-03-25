@@ -1,6 +1,14 @@
+@require '~variables';
+
 .Header {
-    display: flex;
-    flex-direction: row;
     width: 100%;
-    justify-content: space-between;
+    background-color: #FFF;
+
+    &__content-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: $max-content-width;
+        margin: auto;
+    }
 }

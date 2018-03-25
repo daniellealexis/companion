@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './PostCard.styl';
+import './styles.styl';
 
 const baseClassName = 'PostCard';
 

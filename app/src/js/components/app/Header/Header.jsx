@@ -26,25 +26,27 @@ export default class Header extends Component {
 
         return (
             <header className={baseClassName} >
-                <h1>Companion</h1>
-                <div>
-                    <SearchInput onSearch={this.props.onSearch} />
-                </div>
-                { this.props.isLoggedIn &&
-                    <div className={`${baseClassName}__user-info`}>
-                        <span>notifs</span>
-                        <div>
-                            <h6>{this.props.userFirstName}</h6>
-                            <UserAvatar imageUrl={this.props.userAvatar} size="small" />
-                        </div>
+                <div className={`${baseClassName}__content-wrapper`}>
+                    <h1>Companion</h1>
+                    <div>
+                        <SearchInput onSearch={this.props.onSearch} />
                     </div>
-                }
-                { !this.props.isLoggedIn &&
-                    <React.Fragment>
-                        <button>Log In</button>
-                        <button>Sign up</button>
-                    </React.Fragment>
-                }
+                    { this.props.isLoggedIn &&
+                        <div className={`${baseClassName}__user-info`}>
+                            <span>notifs</span>
+                            <div>
+                                <h6>{this.props.userFirstName}</h6>
+                                <UserAvatar imageUrl={this.props.userAvatar} size="small" />
+                            </div>
+                        </div>
+                    }
+                    { !this.props.isLoggedIn &&
+                        <React.Fragment>
+                            <button>Log In</button>
+                            <button>Sign up</button>
+                        </React.Fragment>
+                    }
+                </div>
             </header>
         );
     }

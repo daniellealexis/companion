@@ -9,7 +9,7 @@ module.exports = {
     },
     rules: {
         'indent': ['warn', 4],
-        'react/jsx-indent': ['warn', 4],
+        'react/jsx-indent': "off",
         'max-len': ['warn', {
             code: 100,
             comments: 100,

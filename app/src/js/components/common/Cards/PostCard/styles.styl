@@ -1,16 +1,16 @@
 @require '~variables';
 
 .PostCard {
-    border-radius: $baseBorderRadius;
+    border-radius: $base-border-radius;
     background-color: #FFF;
-    box-shadow: -5px 5px 20px 0px #eee;
+    box-shadow: $base-box-shadow;
     position: relative;
 
     &__header {
         min-height: 9rem;
         color: #FFF;
-        border-radius: $baseBorderRadius $baseBorderRadius 0 0;
-        padding: $padding-m;
+        border-radius: $base-border-radius $base-border-radius 0 0;
+        padding: $size-m;
         background-repeat: no-repeat;
         background-size: cover;
         position: absolute;
@@ -27,7 +27,7 @@
     }
 
     &__main {
-        padding: $padding-l;
+        padding: $size-l;
         display: flex;
     }
 
@@ -36,12 +36,12 @@
         font-size: 1.25rem;
         line-height: 1.4;
         margin: 0;
-        padding: $padding-l;
+        padding: $size-l;
     }
 
     &__category {
         position: absolute;
-        bottom: $padding-m;
+        bottom: $size-m;
         right: @bottom;
     }
 
@@ -56,3 +56,5 @@
         }
     }
 }
+
+// instead of splitting, only have the background image go down a certain amount
