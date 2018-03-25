@@ -12,7 +12,7 @@ const UserCard = props => (
         <UserAvatar
             name={props.name}
             imageUrl={props.imageUrl}
-            title={props.title}
+            title={`${props.title} @${props.username}`}
             size={MEDIUM_SIZE}
         />
         <div className={`${baseClassName}__button-wrapper`}>
@@ -24,11 +24,8 @@ const UserCard = props => (
 UserCard.propTypes = {
     name: PropTypes.string.isRequired,
     imageUrl: PropTypes.string.isRequired,
-    title: PropTypes.string,
-};
-
-UserCard.defaultProps = {
-    title: null,
+    title: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired,
 };
 
 export default UserCard;

@@ -1,33 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import UserAvatar from 'components/common/UserAvatar';
+
 import './styles.styl';
 
 const baseClassName = 'PostCard';
 
-const buildClassNames = props => ([
-    baseClassName,
-    (props.timePosted || props.points) && `${baseClassName}--has-header`,
-].filter(Boolean).join(' '));
+function buildClassNames(props) {
+    return [
+        baseClassName,
+        (props.timePosted || props.points) && `${baseClassName}--has-header`,
+    ].filter(Boolean).join(' ');
+}
 
 const PostCard = props => (
     <article className={buildClassNames(props)} >
-        {(props.timePosted || props.points) &&
-            <div
-                className={`${baseClassName}__header`}
-                style={{ backgroundImage: `url(${props.imageUrl})` }}
-            >
-                {props.timePosted &&
-                    <span className={`${baseClassName}__time`}>{props.timePosted}</span>
-                }
-                {props.points &&
-                    <span className={`${baseClassName}__points`}>{props.points}</span>
-                }
-            </div>
-        }
         <div className={`${baseClassName}__main`}>
-            {props.userAvatar}
-            <p className={`${baseClassName}__text`}>{props.text}</p>
+            <UserAvatar {...props.user} showImageOnly />
+            <p className={`${baseClassName}__text`}>{props.user.name} is {props.text}</p>
             {props.category &&
                 <span className={`${baseClassName}__category`}>{props.category}</span>
             }
@@ -42,6 +33,11 @@ PostCard.propTypes = {
     timePosted: PropTypes.string,
     points: PropTypes.string,
     category: PropTypes.string,
+    user: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        title: PropTypes.string,
+        imageUrl: PropTypes.string.isRequired,
+    }).isRequired,
 };
 
 PostCard.defaultProps = {

@@ -1,3 +1,5 @@
+const OFF = 'off';
+
 module.exports = {
     extends: 'airbnb',
     plugins: [
@@ -9,12 +11,14 @@ module.exports = {
     },
     rules: {
         'indent': ['warn', 4],
-        'react/jsx-indent': "off",
+        'react/jsx-indent': OFF, // inherit from indent
+        'react/jsx-indent-props': OFF, // inherit from indent
         'max-len': ['warn', {
             code: 100,
             comments: 100,
             ignorePattern: '^\\s*(\'.*\'|".*"|`.*`)[,;]?$',
-        }]
+        }],
+        'no-plusplus': OFF,
     },
     settings: {
         'import/resolver': {

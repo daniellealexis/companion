@@ -1,11 +1,11 @@
-import SuggestionCard from './SuggestionCard';
 import PostCard from './PostCard';
 import UserCard from './UserCard';
 import EventCard from './EventCard';
+import QuestionCard from './QuestionCard';
 
 export {
-    SuggestionCard,
     PostCard,
     UserCard,
     EventCard,
+    QuestionCard,
 };

@@ -1,67 +1,52 @@
-import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import React from 'react';
 
 import Section, { THREE_GRID, FULL_WIDTH } from 'components/layout/Section';
-import { PostCard, UserCard, EventCard } from 'components/common/Cards';
-import UserAvatar from 'components/common/UserAvatar';
+import {
+    PostCard,
+    UserCard,
+    EventCard,
+    QuestionCard,
+} from 'components/common/Cards';
+
+import users from 'dummyData/users';
+import events from 'dummyData/events';
+import posts from 'dummyData/posts';
+import questions from 'dummyData/questions';
 
 import './styles.styl';
 
-const dudePhoto = "https://1.bp.blogspot.com/-apCJGz2OWqc/WXGlbrzvWkI/AAAAAAAAAgI/ghZSGVd3RK8dkVSWZ-7ngiQLbU-KTgDJQCLcBGAs/s1600/yoon-ji-seong-wanna-one-02.jpg";
+const usersToDisplay = users.slice(0, 3);
 
-export default class Feed extends Component {
-    render() {
-        const baseClassName = this.constructor.name;
+const NEW_USERS_TITLE = 'Newcomers';
+const POSTS_TITLE = 'Community Connections';
+const QUESTIONS_TITLE = 'Q&A';
+const EVENTS_TITLE = 'Upcoming Events';
 
-        return (
-            <div className={baseClassName}>
-                <Section title="Newcomers" layout={THREE_GRID}>
-                    <UserCard
-                        name="Johhny Sticks"
-                        title="Designer @Sticks"
-                        imageUrl={dudePhoto}
-                    />
-                </Section>
-                <Section title="Community Connections" layout={FULL_WIDTH}>
-                    <PostCard
-                        text="James Victoire is looking for a creative professional with a lot of experience in UI to collaborate with"
-                        category="Collaborate"
-                        userAvatar={
-                            <UserAvatar
-                                name="James Victoire"
-                                imageUrl={dudePhoto}
-                                showImageOnly
-                            />
-                        }
-                    />
-                </Section>
-                <Section title="Q&A" layout={FULL_WIDTH}>
-                    <PostCard
-                        text="I have a question about colors and was wondering if I could get an opinion from a designer"
-                        category="2nd Opinion"
-                        imageUrl="https://image.freepik.com/free-vector/colorful-watercolor-triangles-pattern_23-2147662863.jpg"
-                        points="+10"
-                        userAvatar={
-                            <UserAvatar name="Kim G" title="Designer" imageUrl={dudePhoto} />
-                        }
-                    />
-                </Section>
-                <Section title="Upcoming Events" layout={THREE_GRID}>
-                    <EventCard
-                        date={new Date().toString()}
-                        title="Talk on Design at Buzzfeed HQ"
-                        host="Splash"
-                        imageUrl={dudePhoto}
-                    />
-                </Section>
-            </div>
-        );
-    }
-}
+const baseClassName = 'Feed';
 
-// text
-// userAvatar
-// imageUrl
-// timePosted
-// points
-// category
+const Feed = () => (
+    <div className={baseClassName}>
+        <Section title={NEW_USERS_TITLE} layout={THREE_GRID}>
+            { usersToDisplay && usersToDisplay.map(user => (
+                <UserCard key={user.id} {...user} />
+            ))}
+        </Section>
+        <Section title={POSTS_TITLE} layout={FULL_WIDTH}>
+            { posts && posts.map(post => (
+                <PostCard key={post.id} {...post} />
+            ))}
+        </Section>
+        <Section title={QUESTIONS_TITLE} layout={FULL_WIDTH}>
+            { questions && questions.map(question => (
+                <QuestionCard key={question.id} {...question} />
+            ))}
+        </Section>
+        <Section title={EVENTS_TITLE} layout={THREE_GRID}>
+            {events && events.map(event => (
+                <EventCard key={event.id} {...event} />
+            ))}
+        </Section>
+    </div>
+);
+
+export default Feed;
