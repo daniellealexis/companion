@@ -1,0 +1,67 @@
+@require '~variables';
+
+.QuestionCard {
+    border-radius: $base-border-radius;
+    background-color: #FFF;
+    box-shadow: $base-box-shadow;
+    position: relative;
+
+    &__header {
+        min-height: 6rem;
+        color: #FFF;
+        padding: $size-m;
+        position: relative;
+
+        &__image-container {
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: $base-border-radius $base-border-radius 0 0;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: -4rem;
+            z-index: 1;
+        }
+    }
+
+    &__time {
+        float: left;
+    }
+
+    &__points {
+        float: right;
+    }
+
+    &__main {
+        padding: $size-l;
+        display: flex;
+    }
+
+    &__text {
+        text-decoration: underline;
+        font-size: 1.25rem;
+        line-height: 1.4;
+        margin: 0;
+        padding: $size-l;
+    }
+
+    &__category {
+        position: absolute;
+        bottom: $size-m;
+        right: @bottom;
+    }
+
+    &--has-header {
+        ^[0]__points,
+        ^[0]__time,
+        ^[0]__main {
+            position: relative;
+            z-index: 2;
+        }
+
+        ^[0]__text {
+            padding-top: 4rem;
+        }
+    }
+}

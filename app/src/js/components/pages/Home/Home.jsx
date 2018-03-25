@@ -6,6 +6,7 @@ import Sidebar from 'components/layout/Sidebar';
 import Split from 'components/layout/Split';
 
 import Header from 'components/app/Header';
+import Feed from 'components/app/Feed';
 
 class Home extends Component {
     render() {
@@ -17,9 +18,13 @@ class Home extends Component {
                 <Split className={baseClassName} >
                     <Sidebar>
                         <p>hello friendsss!! CATS ARE COOooooL</p>
+                        {/* List menu */}
+                        {/* Contact List */}
                     </Sidebar>
                     <Main>
-                        <h1>{baseClassName} bees are nice.</h1>
+                        {/* Filter/tool bar */}
+                        {/* post form */}
+                        <Feed />
                     </Main>
                 </Split>
             </React.Fragment>

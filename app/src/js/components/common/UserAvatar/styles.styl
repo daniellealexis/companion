@@ -1,0 +1,44 @@
+@require '~variables';
+
+.UserAvatar {
+    display: inline-block;
+    text-align: center;
+
+    &__image {
+        border-radius: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        margin: auto;
+    }
+
+    &__name {
+        margin: 0;
+        padding: $size-m 0 $size-s;
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    &--small {
+        .UserAvatar__image {
+            height: 2rem;
+            width: @height;
+        }
+    }
+
+    &--medium {
+        .UserAvatar__image {
+            height: 6rem;
+            width: @height;
+        }
+    }
+
+    &--large {
+        .UserAvatar__image {
+            height: 10rem;
+            width: @height;
+        }
+    }
+}

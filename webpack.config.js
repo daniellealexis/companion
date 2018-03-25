@@ -79,8 +79,12 @@ module.exports = {
         colors: true,
     },
     resolve: {
-        extensions: ['.js', '.jsx'],
-        modules: ['node_modules', path.join(BUILD_SRC_PATH, 'js')],
+        extensions: ['.js', '.jsx', '.styl'],
+        modules: [
+            'node_modules',
+            path.join(BUILD_SRC_PATH, 'js'),
+            path.join(BUILD_SRC_PATH, 'styles'),
+        ],
     },
     target: 'web',
     devtool: 'source-map',
