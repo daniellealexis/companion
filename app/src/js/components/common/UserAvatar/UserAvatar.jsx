@@ -15,6 +15,7 @@ export default class UserAvatar extends Component {
         onClick: PropTypes.func,
         size: PropTypes.oneOf([SMALL_SIZE, MEDIUM_SIZE, LARGE_SIZE]),
         showImageOnly: PropTypes.bool,
+        className: PropTypes.string,
     };
 
     static defaultProps = {
@@ -22,6 +23,7 @@ export default class UserAvatar extends Component {
         onClick: () => {},
         size: MEDIUM_SIZE,
         showImageOnly: false,
+        className: '',
     };
 
     getNameTag() {
@@ -46,6 +48,7 @@ export default class UserAvatar extends Component {
 
         return [
             baseClassName,
+            props.className,
             props.size && `${baseClassName}--${props.size}`,
         ].filter(Boolean).join(' ');
     }

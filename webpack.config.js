@@ -20,6 +20,8 @@ const postCSSLoader = {
                     svgo: {
                         exclude: true,
                     },
+                    zindex: false,
+                    'postcss-zindex': false,
                 }],
             }),
         ],
