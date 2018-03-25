@@ -28,7 +28,6 @@ const PostCard = props => (
 
 PostCard.propTypes = {
     text: PropTypes.string.isRequired,
-    userAvatar: PropTypes.node.isRequired,
     imageUrl: PropTypes.string,
     timePosted: PropTypes.string,
     points: PropTypes.string,

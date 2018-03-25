@@ -1,28 +1,37 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import UserAvatar from 'components/common/UserAvatar';
+import UserAvatar, { SMALL_SIZE } from 'components/common/UserAvatar';
 import SearchInput from 'components/common/SearchInput';
 
+import users from 'dummyData/users';
+import { find } from 'utils/collections';
+
 import './styles.styl';
+
+// This will be a container to get logged-in user info and stuff
 
 export default class Header extends Component {
     static propTypes = {
         isLoggedIn: PropTypes.bool,
-        userFirstName: PropTypes.string,
-        userAvatar: PropTypes.string,
         onSearch: PropTypes.func,
+        user: PropTypes.shape({
+            id: PropTypes.number,
+            name: PropTypes.string.isRequired,
+            title: PropTypes.string,
+            imageUrl: PropTypes.string.isRequired,
+        }),
     };
 
     static defaultProps = {
         isLoggedIn: true,
-        userFirstName: 'Allan Revah',
-        userAvatar: '',
         onSearch: null,
+        user: find(users, { id: 6 }),
     };
 
     render() {
         const baseClassName = this.constructor.name;
+        const { user, isLoggedIn } = this.props;
 
         return (
             <header className={baseClassName} >
@@ -31,16 +40,18 @@ export default class Header extends Component {
                     <div>
                         <SearchInput onSearch={this.props.onSearch} />
                     </div>
-                    { this.props.isLoggedIn &&
+                    { isLoggedIn &&
                         <div className={`${baseClassName}__user-info`}>
                             <span>notifs</span>
-                            <div>
-                                <h6>{this.props.userFirstName}</h6>
-                                <UserAvatar imageUrl={this.props.userAvatar} size="small" />
-                            </div>
+                            <UserAvatar
+                                className={`${baseClassName}__user-avatar`}
+                                imageUrl={user.imageUrl}
+                                name={user.name.split(' ')[0]}
+                                size={SMALL_SIZE}
+                            />
                         </div>
                     }
-                    { !this.props.isLoggedIn &&
+                    { !isLoggedIn &&
                         <React.Fragment>
                             <button>Log In</button>
                             <button>Sign up</button>

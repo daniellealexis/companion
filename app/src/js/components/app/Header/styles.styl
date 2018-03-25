@@ -3,12 +3,32 @@
 .Header {
     width: 100%;
     background-color: #FFF;
+    position: fixed;
+    top: 0; left: 0;
+    z-index: 10;
+    min-height: $header-height;
 
+    h1 {
+        font-size: $size-xl;
+    }
+
+    &__user-info,
+    &__user-avatar,
     &__content-wrapper {
         display: flex;
-        flex-direction: row;
+        align-items: center;
+    }
+
+    &__content-wrapper {
         justify-content: space-between;
-        max-width: $max-content-width;
-        margin: auto;
+        $contentWrapper();
+    }
+
+    &__user-avatar {
+        flex-direction: row-reverse;
+
+        .UserAvatar__name {
+            padding: 0 $size-m;
+        }
     }
 }
