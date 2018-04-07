@@ -20,6 +20,7 @@ export default class Header extends Component {
             name: PropTypes.string.isRequired,
             title: PropTypes.string,
             imageUrl: PropTypes.string.isRequired,
+            username: PropTypes.string.isRequired,
         }),
     };
 
@@ -48,6 +49,7 @@ export default class Header extends Component {
                                 imageUrl={user.imageUrl}
                                 name={user.name.split(' ')[0]}
                                 size={SMALL_SIZE}
+                                username={user.username}
                             />
                         </div>
                     }

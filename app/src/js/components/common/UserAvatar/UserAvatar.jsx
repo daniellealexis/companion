@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 import './styles.styl';
 
@@ -10,6 +11,7 @@ export const LARGE_SIZE = 'large';
 export default class UserAvatar extends Component {
     static propTypes = {
         name: PropTypes.string.isRequired,
+        username: PropTypes.string.isRequired,
         imageUrl: PropTypes.string.isRequired,
         title: PropTypes.string,
         onClick: PropTypes.func,
@@ -63,18 +65,20 @@ export default class UserAvatar extends Component {
         const NameTag = this.getNameTag();
 
         return (
-            <div onClick={this.handleAvatarClick} className={this.buildClassNames(this.props)}>
-                <div
-                    className={`${baseClassName}__image`}
-                    style={{ backgroundImage: `url(${imageUrl})` }}
-                />
-                { !this.props.showImageOnly && name &&
-                    <NameTag className={`${baseClassName}__name`}>{name}</NameTag>
-                }
-                { !this.props.showImageOnly && title &&
-                    <p className={`${baseClassName}__title`}>{title}</p>
-                }
-            </div>
+            <Link to={`/u/${this.props.username}`} >
+                <div onClick={this.handleAvatarClick} className={this.buildClassNames(this.props)}>
+                    <div
+                        className={`${baseClassName}__image`}
+                        style={{ backgroundImage: `url(${imageUrl})` }}
+                    />
+                    { !this.props.showImageOnly && name &&
+                        <NameTag className={`${baseClassName}__name`}>{name}</NameTag>
+                    }
+                    { !this.props.showImageOnly && title &&
+                        <p className={`${baseClassName}__title`}>{title}</p>
+                    }
+                </div>
+            </Link>
         );
     }
 }

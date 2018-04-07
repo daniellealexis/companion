@@ -1,13 +1,14 @@
 import React from 'react';
 import { render } from 'react-dom';
-import HomePage from 'components/pages/Home';
+
+import Router from './router';
 
 require('../../styles/main.styl');
 
-render(<HomePage />, document.getElementById('root'));
+render(<Router />, document.getElementById('root'));
 
 if (module.hot) {
     module.hot.accept();
-    const NewHome = require('components/pages/Home').default;
-    render(<NewHome />, document.getElementById('root'));
+    const NewRouter = require('./router').default;
+    render(<NewRouter />, document.getElementById('root'));
 }

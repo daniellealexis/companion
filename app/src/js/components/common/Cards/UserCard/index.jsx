@@ -14,6 +14,7 @@ const UserCard = props => (
             imageUrl={props.imageUrl}
             title={`${props.title} @${props.username}`}
             size={MEDIUM_SIZE}
+            username={props.username}
         />
         <div className={`${baseClassName}__button-wrapper`}>
             <button>+ Follow</button>
