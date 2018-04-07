@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { hot } from 'react-hot-loader';
 
+import users from 'dummyData/users';
+import { find } from 'utils/collections';
+
 import Main from 'components/layout/Main';
 import Sidebar from 'components/layout/Sidebar';
 import Split from 'components/layout/Split';
@@ -13,8 +16,18 @@ class Profile extends Component {
         username: PropTypes.string.isRequired,
     };
 
+    constructor(props) {
+        super(props);
+        const { username } = this.props;
+
+        this.state = {
+            user: find(users, { username }),
+        };
+    }
+
     render() {
         const baseClassName = this.constructor.name;
+        const { user } = this.state;
 
         return (
             <React.Fragment>
@@ -24,7 +37,8 @@ class Profile extends Component {
                         <p>hello friendsss!! CATS ARE COOooooL</p>
                     </Sidebar>
                     <Main>
-                        <h1>{this.props.username}</h1>
+                        <h1>{user.name}</h1>
+                        <h2>{user.username}</h2>
                     </Main>
                 </Split>
             </React.Fragment>
