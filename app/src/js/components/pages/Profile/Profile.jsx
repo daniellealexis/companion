@@ -8,8 +8,12 @@ import { find } from 'utils/collections';
 import Main from 'components/layout/Main';
 import Sidebar from 'components/layout/Sidebar';
 import Split from 'components/layout/Split';
-
 import Header from 'components/app/Header';
+
+import ProfileSidebar from './subcomponents/ProfileSidebar';
+import ProfileBackground from './subcomponents/ProfileBackground';
+
+import './styles.styl';
 
 class Profile extends Component {
     static propTypes = {
@@ -32,9 +36,10 @@ class Profile extends Component {
         return (
             <React.Fragment>
                 <Header />
+                <ProfileBackground imageUrl={user.backgroundImage} />
                 <Split className={baseClassName} >
                     <Sidebar>
-                        <p>hello friendsss!! CATS ARE COOooooL</p>
+                        <ProfileSidebar {...user} />
                     </Sidebar>
                     <Main>
                         <h1>{user.name}</h1>

@@ -1,0 +1,62 @@
+@require '~variables';
+
+$profile-background-height = 12rem;
+$profile-sidebar-width = 275px;
+
+.Profile {
+    .Sidebar {
+        box-sizing: content-box;
+        width: auto;
+    }
+}
+
+.ProfileBackground {
+    margin-top: $header-height;
+    min-height: $profile-background-height;
+    $centeredBackgroundImage();
+    width: 100%;
+}
+
+.ProfileSidebar {
+    position: relative;
+    width: $profile-sidebar-width;
+    top: -($profile-background-height);
+    background-color: $bg-primary-color;
+    padding: $size-xl;
+    border-radius: $base-border-radius;
+    box-sizing: border-box;
+
+    &__avatar {
+        padding: $size-l;
+    }
+
+    section {
+        border-top: $separator-styles;
+        padding: $size-l 0;
+
+        &.is-action-section {
+            text-align: center;
+        }
+    }
+}
+
+.UserDetailsList {
+    &__detail {
+        &-title {
+            font-size: 0.85rem;
+            margin-bottom: $size-xs;
+            color: $text-primary-color;
+
+            ^[0] section &:not(:first-child) {
+                // Any titles that aren't the first in the section
+                padding-top: $size-m;
+            }
+        }
+        &-value {
+            color: $text-secondary-color;
+            font-size: 0.75rem;
+        }
+
+
+    }
+}

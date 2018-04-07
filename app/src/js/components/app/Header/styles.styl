@@ -8,8 +8,14 @@
     z-index: 10;
     min-height: $header-height;
 
-    h1 {
-        font-size: $size-xl;
+    &__logo {
+        color: $text-primary-color;
+        text-decoration: none;
+
+        h1 {
+            font-size: $size-xl;
+            color: inherit;
+        }
     }
 
     &__user-info,

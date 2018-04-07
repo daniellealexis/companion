@@ -40,7 +40,9 @@ export default class Header extends Component {
         return (
             <header className={baseClassName} >
                 <div className={`${baseClassName}__content-wrapper`}>
-                    <Link to={routes.home()}><h1>Companion</h1></Link>
+                    <Link to={routes.home()} className={`${baseClassName}__logo`} >
+                        <h1>Companion</h1>
+                    </Link>
                     <div>
                         <SearchInput onSearch={this.props.onSearch} />
                     </div>
