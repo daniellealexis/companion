@@ -38,6 +38,7 @@ module.exports = {
         filename: '[name].bundle.js',
         hotUpdateChunkFilename: 'hot/hot-update.js',
         hotUpdateMainFilename: 'hot/hot-update.json',
+        publicPath: '/',
     },
     module: {
         rules: [
@@ -91,8 +92,10 @@ module.exports = {
     target: 'web',
     devtool: 'source-map',
     devServer: {
-        contentBase: './app/dist/',
+        contentBase: path.join(__dirname, 'app', 'dist'),
         open: true,
         hot: true,
+        historyApiFallback: true,
+        port: 8082,
     },
 };
