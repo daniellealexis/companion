@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import routes from 'constants/routes';
+
 import './styles.styl';
 
 export const SMALL_SIZE = 'small';
@@ -65,7 +67,7 @@ export default class UserAvatar extends Component {
         const NameTag = this.getNameTag();
 
         return (
-            <Link to={`/u/${this.props.username}`} >
+            <Link to={routes.userProfile(this.props)} >
                 <div onClick={this.handleAvatarClick} className={this.buildClassNames(this.props)}>
                     <div
                         className={`${baseClassName}__image`}

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
+import routes from 'constants/routes';
 
 import UserAvatar, { SMALL_SIZE } from 'components/common/UserAvatar';
 import SearchInput from 'components/common/SearchInput';
@@ -37,7 +40,7 @@ export default class Header extends Component {
         return (
             <header className={baseClassName} >
                 <div className={`${baseClassName}__content-wrapper`}>
-                    <h1>Companion</h1>
+                    <Link to={routes.home()}><h1>Companion</h1></Link>
                     <div>
                         <SearchInput onSearch={this.props.onSearch} />
                     </div>
