@@ -12,6 +12,7 @@ import Header from 'components/app/Header';
 
 import ProfileSidebar from './subcomponents/ProfileSidebar';
 import ProfileBackground from './subcomponents/ProfileBackground';
+import ProfileContent from './subcomponents/ProfileContent';
 
 import './styles.styl';
 
@@ -42,8 +43,7 @@ class Profile extends Component {
                         <ProfileSidebar {...user} />
                     </Sidebar>
                     <Main>
-                        <h1>{user.name}</h1>
-                        <h2>{user.username}</h2>
+                        <ProfileContent userId={user.id} />
                     </Main>
                 </Split>
             </React.Fragment>
