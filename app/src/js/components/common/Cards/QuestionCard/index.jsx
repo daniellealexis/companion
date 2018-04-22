@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import routes from 'constants/routes';
 import UserAvatar from 'components/common/UserAvatar';
+import { formatPoints } from 'utils/numberFormatting';
 
 import './styles.styl';
 
@@ -18,8 +19,6 @@ const buildClassNames = props => ([
     baseClassName,
     checkIfHasHeader(props) && `${baseClassName}--has-header`,
 ].filter(Boolean).join(' '));
-
-const formatPoints = points => (points === 0 ? points : `${points > 0 ? '+' : ''}${points}`);
 
 const QuestionCard = props => (
     <article className={buildClassNames(props)} >
@@ -42,7 +41,7 @@ const QuestionCard = props => (
             }
             <div className={`${baseClassName}__main`}>
                 <UserAvatar {...props.user} />
-                <p className={`${baseClassName}__text`}>{props.text}</p>
+                <p className={`${baseClassName}__text`}>{props.title}</p>
                 {props.category &&
                     <span className={`${baseClassName}__category`}>{props.category}</span>
                 }
@@ -53,7 +52,7 @@ const QuestionCard = props => (
 
 QuestionCard.propTypes = {
     id: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
     imageUrl: PropTypes.string,
     expireTime: PropTypes.string,
     points: PropTypes.number,

@@ -4,4 +4,9 @@ const addCommas = (number = 0) => {
     return parts.join('.');
 };
 
-export default addCommas;
+const formatPoints = points => (points === 0 ? points : `${points > 0 ? '+' : ''}${points}`);
+
+export {
+    addCommas,
+    formatPoints,
+};

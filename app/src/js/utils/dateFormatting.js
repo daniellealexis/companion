@@ -42,3 +42,7 @@ export const addDaysToToday = (days = 0) => {
     today.setDate(today.getDate() + days);
     return today.toUTCString();
 };
+
+export const getRelativeDateFrom = (date) => {
+    return date;
+};
