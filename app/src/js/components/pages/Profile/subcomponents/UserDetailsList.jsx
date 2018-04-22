@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import addCommas from 'utils/numberFormatting';
+import { addCommas } from 'utils/numberFormatting';
 
 const FOLLOWERS = 'Followers';
 const FOLLOWING = 'Following';
