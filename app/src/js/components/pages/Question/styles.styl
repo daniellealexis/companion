@@ -47,6 +47,10 @@ $question-sidebar-width = 275px;
     &__title {
         font-size: $size-xl;
         text-decoration: underline;
+    }
+
+    &__title,
+    &__text {
         margin-bottom: $size-xxl;
     }
 
@@ -54,5 +58,11 @@ $question-sidebar-width = 275px;
         border-left: $separator-styles;
         padding-left: $size-xl;
         line-height: 2;
+    }
+
+    &__comment-list {
+        > article {
+            margin: $size-xxl 0;
+        }
     }
 }

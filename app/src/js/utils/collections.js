@@ -32,6 +32,9 @@ const getMatch = (collection, matchObj) => {
     return match;
 };
 
+/*
+    Rewrite find to use native/faster solution than lodash version
+ */
 export const find = (collection, predicate, fromIndex) => {
     let iteratee;
     const iterable = Object(collection);

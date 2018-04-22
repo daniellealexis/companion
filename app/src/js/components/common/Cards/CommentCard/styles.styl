@@ -1,0 +1,22 @@
+@require '~variables';
+
+.CommentCard {
+    border-radius: $base-border-radius;
+    background-color: #FFF;
+    box-shadow: $base-box-shadow;
+    position: relative;
+
+    &__main {
+        padding: $size-xxl;
+        display: flex;
+    }
+
+    &__text {
+        font-size: $size-l;
+        line-height: 1.75;
+        margin: 0;
+        padding: 0 0 0 $size-xxl;
+    }
+}
+
+// instead of splitting, only have the background image go down a certain amount
