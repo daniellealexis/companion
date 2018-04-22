@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { hot } from 'react-hot-loader';
+// import { hot } from 'react-hot-loader';
 
 import Main from 'components/layout/Main';
 import Sidebar from 'components/layout/Sidebar';
@@ -17,7 +17,7 @@ class Home extends Component {
                 <Header />
                 <Split className={baseClassName} >
                     <Sidebar>
-                        <p>hello friendsss!! CATS ARE COOooooL</p>
+                        <p>Filters</p>
                         {/* List menu */}
                         {/* Contact List */}
                     </Sidebar>
@@ -32,4 +32,4 @@ class Home extends Component {
     }
 }
 
-export default hot(module)(Home);
+export default Home;
