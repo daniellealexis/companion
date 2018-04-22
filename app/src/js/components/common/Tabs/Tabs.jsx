@@ -6,6 +6,8 @@ import TabsG from 'grommet/components/Tabs';
 export const JUSTIFY_START = 'start';
 export const JUSTIFY_END = 'end';
 
+import './styles.styl';
+
 export default class Tabs extends Component {
     static propTypes = {
         className: PropTypes.string,

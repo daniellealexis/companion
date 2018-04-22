@@ -4,6 +4,10 @@ $profile-background-height = 12rem;
 $profile-sidebar-width = 275px;
 
 .Profile {
+    &.Split {
+        margin-top: 0;
+    }
+
     .Sidebar {
         box-sizing: content-box;
         width: auto;
@@ -20,7 +24,7 @@ $profile-sidebar-width = 275px;
 .ProfileSidebar {
     position: relative;
     width: $profile-sidebar-width;
-    top: -($profile-background-height);
+    top: -($profile-background-height - 4);
     background-color: $bg-primary-color;
     padding: $size-xl;
     border-radius: $base-border-radius;
@@ -40,6 +44,15 @@ $profile-sidebar-width = 275px;
     }
 }
 
+.ProfileContent {
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $size-m 0;
+    }
+}
+
 .UserDetailsList {
     &__detail {
         &-title {
@@ -56,7 +69,22 @@ $profile-sidebar-width = 275px;
             color: $text-secondary-color;
             font-size: 0.75rem;
         }
+    }
+}
 
+.DatedTimelineSection {
+    border-top: $separator-styles;
+    margin-top: $size-s;
+    padding: $size-l 0;
 
+    &__title {
+        color: $text-secondary-color;
+        font-size: $size-m;
+        font-weight: $text-weight-bold;
+        padding-bottom: $size-xxl;
+    }
+
+    article {
+        margin-bottom: $size-l;
     }
 }
