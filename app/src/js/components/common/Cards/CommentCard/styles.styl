@@ -2,9 +2,8 @@
 
 .CommentCard {
     border-radius: $base-border-radius;
-    background-color: #FFF;
+    background-color: $bg-primary-color;
     box-shadow: $base-box-shadow;
-    position: relative;
 
     &__main {
         padding: $size-xxl;
@@ -14,9 +13,7 @@
     &__text {
         font-size: $size-l;
         line-height: 1.75;
-        margin: 0;
-        padding: 0 0 0 $size-xxl;
+        padding: 0;
+        padding-left: $size-xxl;
     }
 }
-
-// instead of splitting, only have the background image go down a certain amount
