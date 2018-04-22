@@ -4,7 +4,9 @@ const skillLevels = {
     EXPERT: 'expert',
 };
 
-const yoonJi = "https://1.bp.blogspot.com/-apCJGz2OWqc/WXGlbrzvWkI/AAAAAAAAAgI/ghZSGVd3RK8dkVSWZ-7ngiQLbU-KTgDJQCLcBGAs/s1600/yoon-ji-seong-wanna-one-02.jpg";
+const yoonJi = 'https://1.bp.blogspot.com/-apCJGz2OWqc/WXGlbrzvWkI/AAAAAAAAAgI/ghZSGVd3RK8dkVSWZ-7ngiQLbU-KTgDJQCLcBGAs/s1600/yoon-ji-seong-wanna-one-02.jpg';
+const bgPhoto1 = 'https://images.unsplash.com/photo-1516188003451-593901026058?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=26702bdaafe645b659e7002b6c460e95&auto=format&fit=crop&w=700&q=80';
+const bgPhoto2 = 'https://images.unsplash.com/photo-1448697138198-9aa6d0d84bf4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=df2ce3dc65409d077b8efd6a99f7b63b&auto=format&fit=crop&w=700&q=80';
 
 export default [
     {
@@ -22,6 +24,7 @@ export default [
         dribble: 'dribble.com/johhny',
         behance: 'behance.net/johnny',
         about: 'Johhny is a strategy-minded designer based in New York City. He independantly assists companies in creating lasting brand identities.',
+        backgroundImage: bgPhoto2,
     },
     {
         id: 2,
@@ -38,6 +41,7 @@ export default [
         dribble: 'dribble.com/brettSplat',
         behance: null,
         about: 'Brett Lindholm is a strategy-minded designer based in New York City. He independantly assists companies in creating lasting brand identities.',
+        backgroundImage: bgPhoto1,
     },
     {
         id: 3,
@@ -54,6 +58,7 @@ export default [
         dribble: 'dribble.com/PingZoo',
         behance: 'behance.net/PingZoo',
         about: 'Ping Zoo is a strategy-minded illustrator based in New York City. She independantly assists companies in creating lasting brand identities.',
+        backgroundImage: bgPhoto2,
     },
     {
         id: 4,
@@ -70,6 +75,7 @@ export default [
         dribble: 'dribble.com/victoire',
         behance: 'behance.net/victoire',
         about: 'James Victoire is a designer based in New York City. He assists companies in creating lasting brand identities.',
+        backgroundImage: bgPhoto1,
     },
     {
         id: 5,
@@ -86,6 +92,7 @@ export default [
         dribble: 'dribble.com/slamantha',
         behance: 'behance.net/slamantha',
         about: 'Samantha Jones is a freelance designer based in New York City. She assists companies in creating lasting brand identities.',
+        backgroundImage: bgPhoto2,
     },
     {
         id: 6,
@@ -102,6 +109,7 @@ export default [
         dribble: 'dribble.com/revah',
         behance: 'behance.net/revah',
         about: 'Allan Revah is a freelance designer based in New York City. He assists companies in creating lasting brand identities, in record time.',
+        backgroundImage: bgPhoto1,
     },
     {
         id: 7,
@@ -118,6 +126,7 @@ export default [
         dribble: null,
         behance: null,
         about: 'Kim Ji is a designer based in New York City. He assists companies in creating lasting brand identities.',
+        backgroundImage: bgPhoto2,
     },
     {
         id: 8,
@@ -134,5 +143,6 @@ export default [
         dribble: 'dribble.com/aprilM',
         behance: 'behance.net/aprilM',
         about: 'April May is an illustrator based in New York City. She assists companies in creating lasting brand identities.',
+        backgroundImage: bgPhoto1,
     },
 ];

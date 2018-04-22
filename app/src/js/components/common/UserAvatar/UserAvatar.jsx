@@ -20,14 +20,16 @@ export default class UserAvatar extends Component {
         size: PropTypes.oneOf([SMALL_SIZE, MEDIUM_SIZE, LARGE_SIZE]),
         showImageOnly: PropTypes.bool,
         className: PropTypes.string,
+        noLinkOut: PropTypes.bool,
     };
 
     static defaultProps = {
+        className: '',
         title: null,
         onClick: () => {},
         size: MEDIUM_SIZE,
         showImageOnly: false,
-        className: '',
+        noLinkOut: false,
     };
 
     getNameTag() {
@@ -66,21 +68,25 @@ export default class UserAvatar extends Component {
         } = this.props;
         const NameTag = this.getNameTag();
 
-        return (
-            <Link to={routes.userProfile(this.props)} >
-                <div onClick={this.handleAvatarClick} className={this.buildClassNames(this.props)}>
-                    <div
-                        className={`${baseClassName}__image`}
-                        style={{ backgroundImage: `url(${imageUrl})` }}
-                    />
-                    { !this.props.showImageOnly && name &&
-                        <NameTag className={`${baseClassName}__name`}>{name}</NameTag>
-                    }
-                    { !this.props.showImageOnly && title &&
-                        <p className={`${baseClassName}__title`}>{title}</p>
-                    }
-                </div>
-            </Link>
+        const userAvatarContent = (
+            <div onClick={this.handleAvatarClick} className={this.buildClassNames(this.props)}>
+                <div
+                    className={`${baseClassName}__image`}
+                    style={{ backgroundImage: `url(${imageUrl})` }}
+                />
+                { !this.props.showImageOnly && name &&
+                    <NameTag className={`${baseClassName}__name`}>{name}</NameTag>
+                }
+                { !this.props.showImageOnly && title &&
+                    <p className={`${baseClassName}__title`}>{title}</p>
+                }
+            </div>
         );
+
+        return (this.props.noLinkOut ? userAvatarContent : (
+            <Link to={routes.userProfile(this.props)} className={`${baseClassName}__link`} >
+                {userAvatarContent}
+            </Link>
+        ));
     }
 }

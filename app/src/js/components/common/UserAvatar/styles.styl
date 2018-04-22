@@ -3,22 +3,27 @@
 .UserAvatar {
     display: inline-block;
     text-align: center;
+    color: $text-primary-color;
+
+    &__link {
+        color: $text-primary-color;
+        text-decoration: none;
+    }
 
     &__image {
+        $centeredBackgroundImage();
         border-radius: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
         margin: auto;
     }
 
     &__name {
         margin: 0;
-        padding: $size-m 0 $size-s;
+        padding: $size-m 0 0;
     }
 
     &__title {
         margin: 0;
+        color: $text-secondary-color;
     }
 
     &--small {
@@ -37,7 +42,7 @@
 
     &--large {
         .UserAvatar__image {
-            height: 10rem;
+            height: 9rem;
             width: @height;
         }
     }

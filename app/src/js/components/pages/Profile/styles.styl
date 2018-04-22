@@ -1,0 +1,90 @@
+@require '~variables';
+
+$profile-background-height = 12rem;
+$profile-sidebar-width = 275px;
+
+.Profile {
+    &.Split {
+        margin-top: 0;
+    }
+
+    .Sidebar {
+        box-sizing: content-box;
+        width: auto;
+    }
+}
+
+.ProfileBackground {
+    margin-top: $header-height;
+    min-height: $profile-background-height;
+    $centeredBackgroundImage();
+    width: 100%;
+}
+
+.ProfileSidebar {
+    position: relative;
+    width: $profile-sidebar-width;
+    top: -($profile-background-height - 4);
+    background-color: $bg-primary-color;
+    padding: $size-xl;
+    border-radius: $base-border-radius;
+    box-sizing: border-box;
+
+    &__avatar {
+        padding: $size-l;
+    }
+
+    section {
+        border-top: $separator-styles;
+        padding: $size-l 0;
+
+        &.is-action-section {
+            text-align: center;
+        }
+    }
+}
+
+.ProfileContent {
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: $size-m 0;
+    }
+}
+
+.UserDetailsList {
+    &__detail {
+        &-title {
+            font-size: 0.85rem;
+            margin-bottom: $size-xs;
+            color: $text-primary-color;
+
+            ^[0] section &:not(:first-child) {
+                // Any titles that aren't the first in the section
+                padding-top: $size-m;
+            }
+        }
+        &-value {
+            color: $text-secondary-color;
+            font-size: 0.75rem;
+        }
+    }
+}
+
+.DatedTimelineSection {
+    border-top: $separator-styles;
+    margin-top: $size-s;
+    padding: $size-l 0;
+
+    &__title {
+        color: $text-secondary-color;
+        font-size: $size-m;
+        font-weight: $text-weight-bold;
+        padding-bottom: $size-xxl;
+    }
+
+    article {
+        margin-bottom: $size-l;
+    }
+}

@@ -1,0 +1,56 @@
+@require '~variables';
+
+.Tabs {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+
+    &--justify-start {
+        justify-content: flex-start;
+    }
+
+    &--justify-end {
+        justify-content: flex-end;
+    }
+}
+
+.Tab {
+    border-right: $separator-styles;
+
+    button {
+        padding: $size-s $size-xl;
+        border: none;
+        cursor: pointer;
+        font-size: $size-l;
+        font-weight: $text-weight-bold;
+        background: none;
+        color: $text-secondary-color;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+            outline: none;
+        }
+
+        label {
+            cursor: pointer;
+        }
+    }
+
+    &:last-of-type {
+        border-right: none;
+
+        button {
+            padding-right: 0;
+        }
+    }
+
+    &--active {
+        button {
+            color: $text-primary-color;
+        }
+    }
+}

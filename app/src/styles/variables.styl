@@ -3,6 +3,8 @@ $base-border-radius = 4px;
 $base-box-shadow = -5px 5px 20px 0px #eee;
 $max-content-width = 1000px;
 
+$separator-styles = 1px solid $hr-color;
+
 // Sizes
 $size-xs = 0.25rem;
 $size-s = 0.5rem;
@@ -15,10 +17,26 @@ $layout-padding = $size-l;
 $header-height = 4rem;
 
 // Colors
+$bg-primary-color = #fff;
+$bg-secondary-color = #fbfbfb;
+$hr-color = #dadada;
+
+$text-primary-color = #000;
+$text-secondary-color = #949494;
+
+$text-weight-light = 300;
+$text-weight-regular = 400;
+$text-weight-bold = 700;
 
 // Mixins
 $contentWrapper() {
     max-width: $max-content-width;
     padding: $layout-padding;
     margin: auto;
+}
+
+$centeredBackgroundImage() {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }

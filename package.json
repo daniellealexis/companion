@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "start": "webpack-dev-server --progress --inline",
+    "start": "webpack-dev-server --progress --inline -d",
     "test": "karma start --single-run --browsers ChromeHeadless karma.conf.js"
   },
   "author": "Dani Lewandowski",
